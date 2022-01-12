@@ -13,7 +13,7 @@ void initStack(Stack* s) {
 }
 int isEmpty(Stack* s) {
 	if (s->top == -1) {
-		printf("ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
+		printf("½ºÅÃ °ø¹é ¿¡·¯\n");
 		return 1;
 	}
 	else
@@ -21,7 +21,7 @@ int isEmpty(Stack* s) {
 }
 int isFull(Stack* s) {
 	if (s->top == MAX_STACK_SIZE - 1) {
-		printf("ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");
+		printf("½ºÅÃ Æ÷È­ ¿¡·¯\n");
 		return 1;
 	}
 	else
@@ -39,9 +39,9 @@ char* pop(Stack* s) {
 	else return s->word[(s->top)--];
 }
 void printReverse(const char* sentence) {
-	int count = 0; // ê³µë°±ìœ¼ë¡œ êµ¬ë¶„ëœ ë¬¸ìì—´ì´ ëª‡ ê°œì¸ì§€ ì„¼ë‹¤.
+	int count = 0; // °ø¹éÀ¸·Î ±¸ºĞµÈ ¹®ÀÚ¿­ÀÌ ¸î °³ÀÎÁö ¼¾´Ù.
 	Stack stack;
-	initStack(&stack); // stack ì´ˆê¸°í™”
+	initStack(&stack); // stack ÃÊ±âÈ­
 	char* ptr = strtok(sentence, " ");
 
 	while (ptr != NULL) {
@@ -62,7 +62,7 @@ int main(void) {
 	scanf("%d", &size);
 	fgetc(stdin);
 	for (int i = 0;i < size;i++) {
-		scanf("%[^\n]s", sentence); // enterí‚¤ê°€ ì…ë ¥ë˜ê¸° ì „ê¹Œì§€ ì…ë ¥ë°›ëŠ”ë‹¤.
+		scanf("%[^\n]s", sentence); // enterÅ°°¡ ÀÔ·ÂµÇ±â Àü±îÁö ÀÔ·Â¹Ş´Â´Ù.
 		fgetc(stdin);
 		printf("Case #%d:", num++);
 		printReverse(sentence);
